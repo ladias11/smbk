@@ -5,7 +5,7 @@ module.exports = {
   register: (data) => {
     return new Promise((resolve, reject) => {
       connection.query(
-        'INSERT INTO user SET ?', data, (error, result) => {
+        'INSERT INTO siswa SET ?', data, (error, result) => {
           if (!error) {
             const newResult = {
               id: result.insertId,
@@ -23,7 +23,7 @@ module.exports = {
   getDataCondition: (data) => {
     return new Promise((resolve, reject) => {
       connection.query(
-        'SELECT * FROM user WHERE ?',
+        'SELECT * FROM siswa WHERE ?',
         data,
         (error, result) => {
           !error
@@ -37,7 +37,7 @@ module.exports = {
   update: (id, data) => {
     return new Promise((resolve, reject) => {
       connection.query(
-        'UPDATE user SET ? WHERE user_id = ?',
+        'UPDATE siswa SET ? WHERE NISN = ?',
         [data, id],
         (error, result) => {
           !error

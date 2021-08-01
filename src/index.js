@@ -10,8 +10,8 @@ const port = process.env.PORT
 const routerNavigation = require('./routes')
 
 const app = express()
-app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(compression())
 app.use(cors())
 app.options('*', cors())
